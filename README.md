@@ -7,12 +7,12 @@ This is the style guide that I use to write CSS. It's inspired in other methodol
 The css modules (a.k.a. components, objects, etc) are defined with classes. The name of the module **must be camelCase**. Example:
 
 ```css
-//One module
+/* One module */
 .article {
     
 }
 
-//Another module
+/* Another module */
 .imageCarrousel {
 
 }
@@ -22,11 +22,11 @@ The module can have properties. The properties are joined to the module with a `
 
 ```css
 .article {
-    //main styles of the module
+    /* main styles of the module */
 }
 
 .article-header {
-    //styles of the module property
+    /* styles of the module property */
 }
 ```
 
