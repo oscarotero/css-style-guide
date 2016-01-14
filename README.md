@@ -52,7 +52,7 @@ The use of camelCase notation allows to use a simple join character unlike BEM t
 
 ## Modifiers
 
-A module or property can have modifiers. A modifier serves to change styles under some circunstance. Unlike, for instance, BEM, the modifiers are other classes that you can combine with modules and properties. These classes must begin with `.is-*`, `.has-*`, or `.in-*`.
+A module or property can have modifiers. A modifier serves to change styles under some circunstance. Unlike, for instance, BEM, the modifiers are other classes that you can combine with modules and properties. These classes must begin with `.is-*` and `.has-*`.
 
 The `.is-*` modifier tell a specific aspect of the element. Some examples:
 
@@ -96,30 +96,6 @@ The `.has-*` modifier serves to change the element if it has a specific content.
 <article class="article has-video">
     <video class="article-video" src="video.ogv"></video>
 </article>
-```
-
-
-The `.in-*` modifier serves to change the element if it's inside a specific context. Example:
-
-```css
-.article {
-    color: black;
-}
-
-.in-dark .article {
-    color: white;
-}
-```
-```html
-<div class="background in-dark">
-    <article class="article">
-        dark article
-    </article>
-
-    <article class="article">
-        Other dark article
-    </article>
-</div>
 ```
 
 ## CSS + JS
