@@ -1,6 +1,6 @@
 # CSS Style guide
 
-This is the style guide that I use to write CSS. It's inspired in other methodologies like BEM, SMACSS, OOCSS, etc but tries to be a bit more friendly and easy.
+This is the style guide that I use to write CSS. It's inspired in other methodologies like BEM, SMACSS, OOCSS, etc but more simple.
 
 ## Modules
 
