@@ -150,7 +150,7 @@ $('.article').addClass('is-hidden');
 
 In order to avoid problems with the selectors priority, the main css file should import the nested css files in the following order:
 
-* global classes
+* global styles
 * modules
 * global modifiers
 
