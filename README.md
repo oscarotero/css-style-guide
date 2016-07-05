@@ -76,7 +76,7 @@ The `.is-*` modifier changes the element with a specific status. Some examples:
 </article>
 ```
 
-The `.has-*` modifier is used to change the element according with its container. Example:
+The `.has-*` modifier is used to change the element according with its content. Example:
 
 ```css
 .article {
