@@ -160,3 +160,5 @@ ul.grid > li {
     }
 }
 ```
+
+[Online demo](https://oscarotero.github.io/css-style-guide/tests/grid-variables.html)
