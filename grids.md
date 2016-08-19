@@ -2,7 +2,7 @@
 
 ## The compatible version
 
-This style guide relies on [flexbox](http://caniuse.com/#feat=flexbox) and [calc](http://caniuse.com/#search=calc) to build a responsive grid system, so it requires IE>=10.
+This style guide relies on [media queries](http://caniuse.com/#feat=css-mediaqueries), [flexbox](http://caniuse.com/#feat=flexbox) and [calc](http://caniuse.com/#search=calc) to build a responsive grid system, so it requires IE>=10.
 
 ```css
 ul.grid {

@@ -168,3 +168,8 @@ Example:
 /* Global modifiers */
 @import "modifiers.css";
 ```
+
+# See also
+
+* [grids](https://github.com/oscarotero/css-style-guide/blob/master/grids.md)
+* [locks](https://github.com/oscarotero/css-style-guide/blob/master/locks.md)
