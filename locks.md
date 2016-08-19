@@ -6,14 +6,14 @@ Based in [Flexible typography with CSS locks](http://blog.typekit.com/2016/08/17
 
 ```css
 /*
- * min-value: 1.3em
- * max-value: 3.5em
- * min-width: 21em
- * max-width: 40em
+ * minValue: 1.3em
+ * maxValue: 3.5em
+ * minWidth: 21em
+ * maxWidth: 40em
  */
 h1.title {
-    /* calc({min-value}em + ({max-value} - {min-value}) * ((100vw - {min-width}em)/({max-width} - {min-width}))) */
-    font-size: calc(1.3em + (3.5 - 1.3) * ((100vw - 21em)/(40 - 21)));
+    /* calc({minValue}em + ({maxValue} - {minValue}) * ((100vw - {minWidth}em) / ({maxWidth} - {minWidth}))) */
+    font-size: calc(1.3em + (3.5 - 1.3) * ((100vw - 21em) / (40 - 21)));
 }
 
 @media (max-width: 21em) {
