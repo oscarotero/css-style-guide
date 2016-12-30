@@ -1,6 +1,6 @@
 # CSS Style guide
 
-This is the style guide that I use to write CSS. It's inspired by other methodologies like BEM, SMACSS, OOCSS, etc but more simple.
+This is the style guide that I use to write CSS. It's inspired by other methodologies like BEM, SMACSS, OOCSS, etc but more simple. The aim of this guide is **write modular, scalable and maintainable CSS.**
 
 ## Modules
 
@@ -52,7 +52,7 @@ The use of camelCase notation allows to use a simple join character unlike BEM t
 
 ## Modifiers
 
-A module or property may have modifiers. A modifier is used to change styles under some circunstance or status. Unlike, for instance, BEM, the modifiers are other classes that you can combine with modules and properties. These classes may begin with `.is-*` and `.has-*`.
+A module or property may have modifiers. A modifier is used to change styles under some contexts or status. Unlike, for instance, BEM, the modifiers are other classes that you can combine with modules and properties. These classes may begin with `.is-*` and `.has-*`.
 
 The `.is-*` modifier changes the element with a specific status. Some examples:
 
@@ -146,6 +146,27 @@ It's recomended to separate styling classes and functionality classes. This does
 $('.article').addClass('is-hidden');
 ```
 
+## Hacks
+
+Sometimes you need to create hacks for specific browsers (well, just for _internet explorer_). These hacks **must be in a different file** to not interfere in the main css of the page and be namespaced, using for example the class `.is-ie` in the html.
+
+1. Add the class is-ie to the html element if it's explorer:
+
+   ```js
+   var ua = window.navigator.userAgent;
+   
+   if (ua.indexOf('MSIE ') > 0 || ua.indexOf('Trident/') > 0) {
+       document.documentElement.classList.add('is-ie');
+   }
+   ```
+
+2. Use the class to add css styles to ie
+   ```css
+   html.is-ie .article {
+       color: blue;
+   }
+   ```
+
 ## Imports
 
 In order to avoid problems with the selectors priority, the main css file should import the nested css files in the following order:
@@ -153,6 +174,7 @@ In order to avoid problems with the selectors priority, the main css file should
 * global styles
 * modules
 * global modifiers
+* hacks
 
 Example:
 
@@ -165,8 +187,9 @@ Example:
 @import "modules/article.css";
 @import "modules/comments.css";
 
-/* Global modifiers */
+/* Global modifiers and hacks */
 @import "modifiers.css";
+@import "ie.css";
 ```
 
 # See also
