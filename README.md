@@ -194,5 +194,6 @@ Example:
 
 # See also
 
-* [grids](https://github.com/oscarotero/css-style-guide/blob/master/grids.md)
-* [locks](https://github.com/oscarotero/css-style-guide/blob/master/locks.md)
+* [grids](grids.md)
+* [locks](locks.md)
+* [quantity](quantity.md)
