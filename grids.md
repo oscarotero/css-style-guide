@@ -1,8 +1,8 @@
 # The best way to create css grids in modern browsers
 
-## The compatible version
+## Flexbox version
 
-This style guide relies on [media queries](http://caniuse.com/#feat=css-mediaqueries), [flexbox](http://caniuse.com/#feat=flexbox) and [calc](http://caniuse.com/#search=calc) to build a responsive grid system, so it requires IE>=10.
+This version relies on [media queries](http://caniuse.com/#feat=css-mediaqueries), [flexbox](http://caniuse.com/#feat=flexbox) and [calc](http://caniuse.com/#search=calc) to build a responsive grid system, so it requires IE>=10.
 
 ```css
 ul.grid {
@@ -79,7 +79,7 @@ ul.grid > li {
 }
 ```
 
-## The future version
+## Flexbox + variables
 
 This version uses also [css variables](http://caniuse.com/#feat=css-variables), so it's not supported by IE and Edge:
 
@@ -162,3 +162,48 @@ ul.grid > li {
 ```
 
 [Online demo](https://oscarotero.github.io/css-style-guide/tests/grid-variables.html)
+
+## The future version (CSS grid)
+
+This version uses also [css grid](http://caniuse.com/#search=grid), so it's not supported by IE and Edge:
+
+```css
+ul.grid {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 100fr;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 2 columns grid */
+@media (min-width: 30rem) {
+    ul.grid {
+        grid-template-columns: repeat(2, 50fr);
+    }
+}
+
+/* 3 columns grid */
+@media (min-width: 50rem) {
+    ul.grid {
+        grid-template-columns: repeat(3, 33.33fr);
+    }
+}
+
+/* 4 columns grid */
+@media (min-width: 70rem) {
+    ul.grid {
+        grid-template-columns: repeat(4, 25fr);
+    }
+}
+
+/* 5 columns grid */
+@media (min-width: 90rem) {
+    ul.grid {
+        grid-template-columns: repeat(5, 20fr);
+    }
+}
+```
+
+[Online demo](https://oscarotero.github.io/css-style-guide/tests/grid.html)
