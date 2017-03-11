@@ -171,38 +171,10 @@ This version uses also [css grid](http://caniuse.com/#search=grid), so it's not 
 ul.grid {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: 100fr;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-/* 2 columns grid */
-@media (min-width: 30rem) {
-    ul.grid {
-        grid-template-columns: repeat(2, 50fr);
-    }
-}
-
-/* 3 columns grid */
-@media (min-width: 50rem) {
-    ul.grid {
-        grid-template-columns: repeat(3, 33.33fr);
-    }
-}
-
-/* 4 columns grid */
-@media (min-width: 70rem) {
-    ul.grid {
-        grid-template-columns: repeat(4, 25fr);
-    }
-}
-
-/* 5 columns grid */
-@media (min-width: 90rem) {
-    ul.grid {
-        grid-template-columns: repeat(5, 20fr);
-    }
 }
 ```
 

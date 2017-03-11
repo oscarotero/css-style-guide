@@ -20,69 +20,21 @@
         ul.grid {
             display: grid;
             grid-gap: 1rem;
-            grid-template-columns: 100fr;
+            grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
             list-style: none;
             padding: 0;
             margin: 0;
-        }
-
-        @media (min-width: 30rem) {
-            ul.grid {
-                grid-template-columns: repeat(2, 50fr);
-            }
-        }
-
-        @media (min-width: 50rem) {
-            ul.grid {
-                grid-template-columns: repeat(3, 33.33fr);
-            }
-        }
-
-        @media (min-width: 70rem) {
-            ul.grid {
-                grid-template-columns: repeat(4, 25fr);
-            }
-        }
-
-        @media (min-width: 90rem) {
-            ul.grid {
-                grid-template-columns: repeat(5, 20fr);
-            }
         }
 
         /* Fixed-width grid */
         ul.grid-fixed {
             display: grid;
             grid-gap: 1rem;
-            grid-template-columns: 15rem;
+            grid-template-columns: repeat(auto-fill, 15rem);
             list-style: none;
             padding: 0;
             margin: 0;
             justify-content: center;
-        }
-
-        @media (min-width: 30rem) {
-            ul.grid-fixed {
-                grid-template-columns: repeat(2, 15rem);
-            }
-        }
-
-        @media (min-width: 50rem) {
-            ul.grid-fixed {
-                grid-template-columns: repeat(3, 15rem);
-            }
-        }
-
-        @media (min-width: 70rem) {
-            ul.grid-fixed {
-                grid-template-columns: repeat(4, 15rem);
-            }
-        }
-
-        @media (min-width: 90rem) {
-            ul.grid-fixed {
-                grid-template-columns: repeat(5, 15rem);
-            }
         }
     </style>
 </head>
