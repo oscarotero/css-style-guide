@@ -1,3 +1,6 @@
-h1 + h1 {
+.non-ie {
+    display: none;
+}
+.old-ie {
     display: block;
 }
