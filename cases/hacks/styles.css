@@ -4,3 +4,6 @@ html {
 h1 {
     display: none;
 }
+h1:nth-child(3) {
+    display: block;
+}
