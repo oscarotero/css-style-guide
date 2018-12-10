@@ -2,9 +2,7 @@
 
 The "notch" is the shape that Apple added to the iPhoneX creating a white bar on de edges. This guide allows to remove that effect and extend the webpage to the entire screen:
 
-Based in ["The Notch" and CSS](https://css-tricks.com/the-notch-and-css/)
-
-. This guide allows to extend the page to th
+Based in [Removing the White Bars in Safari on iPhone X](http://stephenradford.me/removing-the-white-bars-in-safari-on-iphone-x/)
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> 
