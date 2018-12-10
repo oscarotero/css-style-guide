@@ -30,4 +30,4 @@ ul li:nth-last-child(5):first-child ~ li {
 }
 ```
 
-[Online demo](https://oscarotero.github.io/css-style-guide/tests/css-selectors.html)
+[Online demo](https://oscarotero.github.io/css-style-guide/cases/cuantity/)

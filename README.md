@@ -58,7 +58,7 @@ The `.is-*` modifier changes the element with a specific status. Some examples:
 
 ```css
 .article.is-hidden {
-    display: block;
+    display: none;
 }
 
 .article-header.is-important {
@@ -76,7 +76,7 @@ The `.is-*` modifier changes the element with a specific status. Some examples:
 </article>
 ```
 
-The `.has-*` modifier is used to change the element according with its content. Example:
+The `.has-*` modifier is used to change the element according to its content. Example:
 
 ```css
 .article {
@@ -94,7 +94,7 @@ The `.has-*` modifier is used to change the element according with its content. 
 </article>
 ```
 
-The modifiers must be declared always combined with the modules/properties:
+The modifiers should be declared always combined with the modules/properties:
 
 ```css
 /* wrong */
@@ -113,7 +113,7 @@ This has two advantages:
 * Increments the priority of the selector.
 * Allows to create different styles for the same modifier combined with different modules/properties.
 
-Of course, there may be global modifiers if needed:
+There may be global modifiers if needed:
 
 ```css
 /* This modifier is always the same */
@@ -146,27 +146,6 @@ It's recomended to separate styling classes and functionality classes. This does
 $('.article').addClass('is-hidden');
 ```
 
-## Hacks
-
-Sometimes you need to create hacks for specific browsers (well, just for _internet explorer_). These hacks **must be in a different file** to not interfere in the main css of the page and be namespaced, using for example the class `.is-ie` in the html.
-
-1. Add the class is-ie to the html element if it's explorer:
-
-   ```js
-   var ua = window.navigator.userAgent;
-   
-   if (ua.indexOf('MSIE ') > 0 || ua.indexOf('Trident/') > 0) {
-       document.documentElement.classList.add('is-ie');
-   }
-   ```
-
-2. Use the class to add css styles to ie
-   ```css
-   html.is-ie .article {
-       color: blue;
-   }
-   ```
-
 ## Imports
 
 In order to avoid problems with the selectors priority, the main css file should import the nested css files in the following order:
@@ -192,8 +171,8 @@ Example:
 @import "ie.css";
 ```
 
-# See also
+# Use cases
 
-* [grids](grids.md)
-* [locks](locks.md)
-* [quantity](quantity.md)
+* [hacks](cases/hacks)
+* [locks](cases/locks)
+* [quantity](cases/quantity)

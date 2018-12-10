@@ -29,4 +29,4 @@ h1.title {
 }
 ```
 
-[Online demo](https://oscarotero.github.io/css-style-guide/tests/font-locks.html)
+[Online demo](https://oscarotero.github.io/css-style-guide/cases/locks/)
