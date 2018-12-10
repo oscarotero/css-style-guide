@@ -171,8 +171,9 @@ Example:
 @import "ie.css";
 ```
 
-# Use cases
+# Other cases
 
 * [hacks](cases/hacks)
 * [locks](cases/locks)
 * [quantity](cases/quantity)
+* [notch](cases/notch)
