@@ -178,3 +178,4 @@ Example:
 * [quantity](cases/quantity)
 * [notch](cases/notch)
 * [typography](cases/typography)
+* [select](cases/select)
