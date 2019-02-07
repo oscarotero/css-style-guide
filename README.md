@@ -122,6 +122,32 @@ There may be global modifiers if needed:
 }
 ```
 
+## Layouts
+
+For convention, the css styles used only for layout purposes must use the `.ly-*` namespace.
+Example of the layout `.ly-simple` with two properties: `navigation` and `content`:
+
+```css
+.ly-simple {
+    display: grid;
+    grid-template-areas: 'navigation content';
+    grid-template-columns: 400px 1fr;
+}
+.ly-simple-navigation {
+    grid-area: navigation;
+}
+.ly-simple-content {
+    grid-area: content;
+}
+```
+
+```html
+<div class="ly-simple">
+    <nav class="ly-simple-navigation">...</nav>
+    <main class="ly-simple-content">...</nav>
+</div>
+```
+
 ## CSS + JS
 
 The css classes can be used by javascript to select elements. To prevent conflict between css and js, **the classes used by javascript should not be used by css, and viceversa**. Because that, there's the `.js-*` namespace:
@@ -150,7 +176,7 @@ $('.article').addClass('is-hidden');
 
 In order to avoid problems with the selectors priority, the main css file should import the nested css files in the following order:
 
-* global styles
+* global styles (reset, variables, normalize, etc)
 * modules
 * global modifiers
 * hacks
