@@ -199,8 +199,8 @@ Example:
 
 # Cases
 
+* [100vh](cases/100vh)
 * [hacks](cases/hacks)
-* [locks](cases/locks)
 * [quantity](cases/quantity)
 * [notch](cases/notch)
 * [typography](cases/typography)

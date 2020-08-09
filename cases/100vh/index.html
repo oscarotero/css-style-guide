@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>iPhone 100vh</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		body {
+			display: flex; 
+  		flex-direction: column;
+  		margin: 0;
+			min-height: 100vh;
+		}
+
+		main {
+			flex: 1;
+		}
+		footer {
+			background: yellow;
+			padding: 1em;
+		}
+
+		/* Apply the hack only in Safari */
+		@supports (-webkit-touch-callout: none) {
+			body {
+				min-height: -webkit-fill-available;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>Header goes here</header>
+	<main>Main goes here</main>
+	<footer>Footer goes here</footer>
+</body>
+</html>
