@@ -52,7 +52,7 @@ The use of camelCase notation allows to use a simple join character unlike BEM t
 
 ## Modifiers
 
-A module or property may have modifiers. A modifier is used to change styles under some contexts or status. Unlike, for instance, BEM, the modifiers are other classes that you can combine with modules and properties. These classes may begin with `.is-*` and `.has-*`.
+A module or property may have modifiers. A modifier is used to change styles under some contexts or status. Unlike, for instance, BEM, the modifiers are independent classes that you can combine with modules and properties. These classes must start with `.is-*` and `.has-*`.
 
 The `.is-*` modifier changes the element with a specific status. Some examples:
 
@@ -170,6 +170,16 @@ It's recomended to separate styling classes and functionality classes. This does
 
 ```js
 $('.article').addClass('is-hidden');
+```
+
+## !important
+
+The `!important` flag is not recommended, but can be used in edge cases. Every time we use it, we should include a comment explaining the reason, so it can be removed in the future.
+
+```css
+.popup-title {
+    font-weight: bold !important; /* This overrides the inline style applied by the plugin popup */
+}
 ```
 
 ## Imports
