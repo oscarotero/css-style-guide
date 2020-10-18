@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Focus</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+    body {
+      font-family: sans-serif;
+    }
+
+    button:focus-visible {
+      outline: 4px dashed black;
+    }
+    /* Firefox */
+    button:-moz-focusring {
+      outline: 4px dashed black;
+    }
+
+    button:focus:not(:focus-visible) {
+      outline: none;
+      box-shadow: 1px 1px 10px rgba(1, 1, 0, .7);
+    }
+	</style>
+</head>
+<body>
+	<button>click</button>
+	
+  <form action="https://github.com/oscarotero/">
+    <button>Go to github</button> (and then back)
+  </form>
+</body>
+</html>

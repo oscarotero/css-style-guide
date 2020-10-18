@@ -210,6 +210,7 @@ Example:
 # Cases
 
 * [100vh](cases/100vh)
+* [focus](cases/focus)
 * [hacks](cases/hacks)
 * [quantity](cases/quantity)
 * [notch](cases/notch)
