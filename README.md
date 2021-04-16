@@ -144,7 +144,7 @@ Example of the layout `.ly-simple` with two properties: `navigation` and `conten
 ```html
 <div class="ly-simple">
     <nav class="ly-simple-navigation">...</nav>
-    <main class="ly-simple-content">...</nav>
+    <main class="ly-simple-content">...</main>
 </div>
 ```
 
