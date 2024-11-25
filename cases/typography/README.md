@@ -4,7 +4,8 @@ Guide of advanced css features for typography.
 
 ## Caps
 
-More info: [Font Variant Caps](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps)
+More info:
+[Font Variant Caps](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-caps)
 
 To use real small caps:
 
@@ -16,11 +17,13 @@ To use real small caps:
 
 ## Numbers
 
-More info: [Font Variant Numeric](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric)
+More info:
+[Font Variant Numeric](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric)
 
 ### Lining / old style
 
-Lining figures are uppercase numbers. Old style figures are numbers to use inside a body text.
+Lining figures are uppercase numbers. Old style figures are numbers to use
+inside a body text.
 
 ```css
 .lining {
@@ -34,7 +37,8 @@ Lining figures are uppercase numbers. Old style figures are numbers to use insid
 
 ### Proportional / tabular
 
-Proportional means numbers with different widths. Tabular numbers align horizontally no matter the number.
+Proportional means numbers with different widths. Tabular numbers align
+horizontally no matter the number.
 
 ```css
 .proportional {
@@ -48,13 +52,16 @@ Proportional means numbers with different widths. Tabular numbers align horizont
 
 ## Ligatures
 
-More info: [Font Variant Ligatures](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures)
+More info:
+[Font Variant Ligatures](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures)
 
-The common ligatures are enabled by default in most browsers. You can enable also other different ligatures:
+The common ligatures are enabled by default in most browsers. You can enable
+also other different ligatures:
 
 ### Discretional / contextual
 
-Discretional ligatures are more ornamental. Contextual are more common in script typefaces, and are used to make the text look "natural"
+Discretional ligatures are more ornamental. Contextual are more common in script
+typefaces, and are used to make the text look "natural"
 
 ```css
 .discretional {

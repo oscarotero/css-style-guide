@@ -1,77 +1,85 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS selectors test</title>
 
     <style type="text/css">
-        /* Basic styles */
-        html {
-            margin: 2em;
-            font-family: sans-serif;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            display: inline-block;
-            padding: 1em;
-        }
+      /* Basic styles */
+      html {
+        margin: 2em;
+        font-family: sans-serif;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        display: inline-block;
+        padding: 1em;
+      }
 
-        /* At least 5 */
-        ul li:nth-last-child(n+5),
-        ul li:nth-last-child(n+5) ~ li {
-            border: 2px dashed;
-        }
+      /* At least 5 */
+      ul li:nth-last-child(n+5),
+      ul li:nth-last-child(n+5) ~ li {
+        border: 2px dashed;
+      }
 
-        /* At most 5 */
-        ul li:nth-last-child(-n+5):first-child,
-        ul li:nth-last-child(-n+5):first-child ~ li {
-            background-color: yellow;
-        }
+      /* At most 5 */
+      ul li:nth-last-child(-n+5):first-child,
+      ul li:nth-last-child(-n+5):first-child ~ li {
+        background-color: yellow;
+      }
 
-        /* Between 5 and 8 */
-        ul li:nth-last-child(n+5):nth-last-child(-n+8):first-child,
-        ul li:nth-last-child(n+5):nth-last-child(-n+8):first-child ~ li {
-            font-weight: bold;
-        }
+      /* Between 5 and 8 */
+      ul li:nth-last-child(n+5):nth-last-child(-n+8):first-child,
+      ul li:nth-last-child(n+5):nth-last-child(-n+8):first-child ~ li {
+        font-weight: bold;
+      }
 
-        /* Exactly 5 */
-        ul li:nth-last-child(5):first-child,
-        ul li:nth-last-child(5):first-child ~ li {
-            text-decoration: underline;
-        }
+      /* Exactly 5 */
+      ul li:nth-last-child(5):first-child,
+      ul li:nth-last-child(5):first-child ~ li {
+        text-decoration: underline;
+      }
     </style>
-</head>
-<body>
-<h1>Cuantity queries</h1>
-<p style="padding: 1em; display: inline-block; border: 2px dashed;">At least 5</p>
-<p style="padding: 1em; display: inline-block; background-color: yellow;">At most 5</p>
-<p style="padding: 1em; display: inline-block; text-decoration: underline;">Exactly 5</p>
-<p style="padding: 1em; display: inline-block; font-weight: bold;">Between 5 and 8</p>
-<ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-</ul>
-<ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-</ul>
-<ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-    <li>6</li>
-    <li>7</li>
-</ul>
-</body>
+  </head>
+  <body>
+    <h1>Cuantity queries</h1>
+    <p style="padding: 1em; display: inline-block; border: 2px dashed">
+      At least 5
+    </p>
+    <p style="padding: 1em; display: inline-block; background-color: yellow">
+      At most 5
+    </p>
+    <p style="padding: 1em; display: inline-block; text-decoration: underline">
+      Exactly 5
+    </p>
+    <p style="padding: 1em; display: inline-block; font-weight: bold">
+      Between 5 and 8
+    </p>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+    </ul>
+  </body>
 </html>
