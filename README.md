@@ -24,16 +24,16 @@ use _camelCase_ or underscores:
 .image_carousel {}
 ```
 
-The component may have properties. The properties are joined to the component
-name with a `-`. Example:
+Components may have properties. The properties are joined to the component name
+with a `-`. Example:
 
 ```css
 .article {
-  /* main styles of the component */
+  /* styles of the component */
 }
 
 .article-header {
-  /* styles of the component property */
+  /* styles of the component's property */
 }
 ```
 
@@ -44,6 +44,11 @@ Like component names, properties shouldn't have `-` characters:
   /* styles of the mainImage property of article component */
 }
 ```
+
+> [!note]
+>
+> The use of camelCase notation allows to use a simple join character unlike BEM
+> that needs two underscores (`.article__header__title`).
 
 This allows to add sub-properties if it's needed:
 
@@ -61,15 +66,25 @@ This allows to add sub-properties if it's needed:
 </article>
 ```
 
-The use of camelCase notation allows to use a simple join character unlike BEM
-that needs two underscores (`.article__header__title`).
+Don't use use sub-properties if you really don't need to. The previous example
+is clearer as following:
+
+```html
+<article class="article">
+  <header class="article-header">
+    <h1 class="article-title">
+      The title
+    </h1>
+  </header>
+</article>
+```
 
 ## Modifiers
 
-A component or property may have modifiers. A modifier is used to change styles
-under some contexts or status. Unlike, for instance, BEM, the modifiers are
+Components and properties may have modifiers. Modifiers are used to change
+styles under some contexts or status. Unlike, for instance, BEM, modifiers are
 independent classes that you can combine with components and properties. These
-classes must start with `.is-*` and `.has-*`.
+classes should start with `.is-*` and `.has-*`.
 
 The `.is-*` modifier changes the element with a specific status. Some examples:
 
@@ -135,13 +150,13 @@ This has two advantages:
 There may be global modifiers if needed:
 
 ```css
-/* This modifier is always the same */
+/* This is a global modifier, it can be combined with any component */
 .is-hidden {
   display: none;
 }
 ```
 
-Some `has-` modifiers can be replaces with the
+Some `has-` modifiers can be replaced with the
 [`:has()` selector](https://developer.mozilla.org/en-US/docs/Web/CSS/:has)
 supported by all modern browsers:
 
@@ -159,28 +174,28 @@ supported by all modern browsers:
 
 ## Layouts
 
-By convention, the CSS styles used only for layout purposes must use the `.ly-*`
-namespace. Example of the layout `.ly-simple` with two properties: `navigation`
+By convention, CSS styles used only for layout purposes must use the `.ly-*`
+namespace. Example of the `2columns` layout with two properties: `navigation`
 and `content`:
 
 ```css
-.ly-simple {
+.ly-2columns {
   display: grid;
   grid-template-areas: "navigation content";
   grid-template-columns: 400px 1fr;
 }
-.ly-simple-navigation {
+.ly-2columns-navigation {
   grid-area: navigation;
 }
-.ly-simple-content {
+.ly-2columns-content {
   grid-area: content;
 }
 ```
 
 ```html
-<div class="ly-simple">
-  <nav class="ly-simple-navigation">...</nav>
-  <main class="ly-simple-content">...</main>
+<div class="ly-2columns">
+  <nav class="ly-2columns-navigation">...</nav>
+  <main class="ly-2columns-content">...</main>
 </div>
 ```
 
@@ -220,7 +235,8 @@ so it can be removed in the future.
 
 ```css
 .popup-title {
-  font-weight: bold !important; /* This overrides the inline style applied by the plugin popup */
+  font-weight: bold
+    !important; /* This overrides the inline style applied by the plugin popup */
 }
 ```
 
