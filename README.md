@@ -266,6 +266,24 @@ Example:
 @import "ie.css";
 ```
 
+## Layers
+
+Additionally, we can use CSS layers for better organization and priority:
+
+```css
+@layer global {
+  /* Normalize, reset */
+}
+
+@layer components {
+  /* Components */
+}
+
+@layer utils {
+  /* Utils, global modifiers, hacks, etc */
+}
+```
+
 ---
 
 Other notes:
