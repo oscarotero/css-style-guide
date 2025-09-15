@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <style>
+      /* https://utopia.fyi/blog/clamp/ */
+      :root {
+        --unit: 1px;
+        --min-width: 320;
+        --max-width: 1000;
+        --scale: 1.5;
+        --scale-range: 2;
+        
+        /* Size 0 */
+        --size-0-min: 16;
+        --size-0-max: calc(var(--size-0-min) * var(--scale-range));
+        --size-0: clamp(
+          var(--size-0-min) * var(--unit),
+          ((-1 * var(--min-width) * ((var(--size-0-max) - var(--size-0-min)) / (var(--max-width) - var(--min-width))) + var(--size-0-min)) * var(--unit)) + ((var(--size-0-max) - var(--size-0-min)) / (var(--max-width) - var(--min-width)) * 100vw),
+          var(--size-0-max) * var(--unit)
+        );
+
+        /* Size 1 */
+        --size-1-min: calc(var(--size-0-min) * var(--scale));
+        --size-1-max: calc(var(--size-1-min) * var(--scale-range));
+        --size-1: clamp(
+          var(--size-1-min) * var(--unit),
+          ((-1 * var(--min-width) * ((var(--size-1-max) - var(--size-1-min)) / (var(--max-width) - var(--min-width))) + var(--size-1-min)) * var(--unit)) + ((var(--size-1-max) - var(--size-1-min)) / (var(--max-width) - var(--min-width)) * 100vw),
+          var(--size-1-max) * var(--unit)
+        );
+
+        /* Size 3 */
+        --size-3-min: calc(var(--size-1-min) * var(--scale));
+        --size-3-max: calc(var(--size-3-min) * var(--scale-range));
+        --size-3: clamp(
+          var(--size-3-min) * var(--unit),
+          ((-1 * var(--min-width) * ((var(--size-3-max) - var(--size-3-min)) / (var(--max-width) - var(--min-width))) + var(--size-3-min)) * var(--unit)) + ((var(--size-3-max) - var(--size-3-min)) / (var(--max-width) - var(--min-width)) * 100vw),
+          var(--size-3-max) * var(--unit)
+        );
+
+      }
+    </style>
+  </head>
+  <body>
+    <p style="font-size: var(--size-0)">Ola</p>
+    <p style="font-size: var(--size-1)">Ola</p>
+    <p style="font-size: var(--size-3)">Ola</p>
+  </body>
+</html>
