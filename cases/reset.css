@@ -1,0 +1,12 @@
+* {
+  /* https://www.oddbird.net/2025/09/04/box-model/ */
+  box-sizing: border-box;
+}
+
+html {
+  /* https://gomakethings.com/prevent-scrollbar-jump/ */
+  scrollbar-gutter: stable;
+
+  /* https://dbushell.com/2024/11/05/webkit-font-smoothing/ */
+  -webkit-font-smoothing: antialiased;
+}
