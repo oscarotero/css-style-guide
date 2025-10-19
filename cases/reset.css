@@ -10,7 +10,7 @@ html {
   /* https://dbushell.com/2024/11/05/webkit-font-smoothing/ */
   -webkit-font-smoothing: antialiased;
 
-  /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+  /* https://pawelgrzybek.com/the-css-reset-again/ */
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
 }
