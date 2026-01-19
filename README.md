@@ -145,7 +145,7 @@ CSS selector:
 }
 
 /* not cool */
-.article.has-video {
+.article.is-video {
   width: 900px;
 }
 
