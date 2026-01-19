@@ -212,8 +212,8 @@ modifiers:
 }
 ```
 
-Use variables for all values that you want to customize. And place all possible
-states in the same place:
+Use variables for all values that you want to customize. And keep the variables
+defined together at the top:
 
 ```css
 /* Not cool. It makes difficult to modify or create variations */
