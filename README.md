@@ -6,7 +6,7 @@ guide is **write modular, scalable and maintainable CSS.**
 
 ## Components
 
-CSS components (a.k.a. modules, objects, etc) are defined with classes.
+CSS components (a.k.a. modules) are defined with classes.
 
 ```css
 /* The 'article' component */
@@ -66,8 +66,8 @@ This allows to add sub-properties if it's needed:
 </article>
 ```
 
-Don't use use sub-properties if you really don't need to. The previous example
-is clearer as following:
+But don't use use sub-properties if you really don't need to. The previous
+example is clearer as following:
 
 ```html
 <article class="article">
@@ -79,12 +79,19 @@ is clearer as following:
 </article>
 ```
 
+> [!note]
+>
+> The `.article-header-title` example only makes sense if the component has
+> different titles in different positions. For example `.article-section-title`
+> or `.article-footer.title`. But if it has only one title, just use
+> `.article-title`.
+
 ## Modifiers
 
 Components and properties may have modifiers. Modifiers are used to change
 styles under some contexts or status. Unlike, for instance, BEM, modifiers are
 independent classes that you can combine with components and properties. These
-classes should start with `.is-*` and `.has-*`.
+classes must start with `.is-*`.
 
 The `.is-*` modifier changes the element with a specific status. Some examples:
 
@@ -93,37 +100,14 @@ The `.is-*` modifier changes the element with a specific status. Some examples:
   display: none;
 }
 
-.article-header.is-important {
-  font-weight: bold;
-}
-
-.article p.is-highlighted {
+.article.is-important {
   background: yellow;
 }
 ```
 
 ```html
-<article class="article is-hidden">
-  invisible content
-</article>
-```
-
-The `.has-*` modifier is used to change the element according to its content.
-Example:
-
-```css
-.article {
-  width: 500px;
-}
-
-.article.has-video {
-  width: 900px;
-}
-```
-
-```html
-<article class="article has-video">
-  <video class="article-video" src="video.ogv"></video>
+<article class="article is-important">
+  ...
 </article>
 ```
 
@@ -131,13 +115,13 @@ The modifiers must be declared always combined with the components/properties:
 
 ```css
 /* wrong */
-.has-video {
-  width: 900px;
+.is-important {
+  background: yellow;
 }
 
 /* right */
-.article.has-video {
-  width: 900px;
+.article.is-important {
+  background: yellow;
 }
 ```
 
@@ -156,19 +140,107 @@ There may be global modifiers if needed:
 }
 ```
 
-Some `has-` modifiers can be replaced with the
-[`:has()` selector](https://developer.mozilla.org/en-US/docs/Web/CSS/:has)
-supported by all modern browsers:
+Don't create a modifier if you can use
+[`:has()`](https://developer.mozilla.org/en-US/docs/Web/CSS/:has) or a similar
+CSS selector:
 
 ```css
-/* Old way */
+.article {
+  width: 500px;
+}
+
+/* not cool */
 .article.has-video {
   width: 900px;
 }
 
-/* Modern way */
+/* much better! */
 .article:has(.article-video) {
   width: 900px;
+}
+```
+
+```html
+<article class="article">
+  <video class="article-video" src="video.ogv"></video>
+</article>
+```
+
+## Settings
+
+Components have two parts: settings and implementation. The settings is a list
+of CSS variables at the top:
+
+```css
+.button {
+  /* Settings */
+  --size: 1rem;
+  --color: white;
+  --color-hover: var(--color);
+  --color-focus: var(--color-hover);
+  --background: blue;
+  --background-hover: darkblue;
+  --background-focus: black;
+
+  /* Implementation */
+  font-size: var(--size);
+  color: var(--color);
+  background-color: var(--background);
+
+  &:hover {
+    color: var(--color-hover);
+    background-color: var(--background-hover);
+  }
+
+  &:focus {
+    color: var(--color-focus);
+    background-color: var(--background-focus);
+  }
+}
+```
+
+This allows to create new variations of the same component easily using
+modifiers:
+
+```css
+.button.is-secondary {
+  --color: blue;
+  --color-hover: var(--color);
+  --color-focus: var(--color-hover);
+  --background: white;
+  --background-hover: #ccc;
+  --background-focus: #999;
+}
+
+.button.is-big {
+  --size: 2rem;
+}
+```
+
+Use variables for all values that you want to customize. And place all possible
+states in the same place:
+
+```css
+/* Not cool. It makes difficult to modify or create variations */
+.details {
+  --color: gray;
+
+  &:open {
+    --color: black;
+  }
+
+  color: var(--color);
+}
+
+/* Much better! */
+.details {
+  --color: gray;
+  --color-open: black;
+
+  color: var(--color);
+  &:open {
+    color: var(--color-open);
+  }
 }
 ```
 
@@ -199,44 +271,28 @@ and `content`:
 </div>
 ```
 
-## CSS + JS
+Like components, layouts can be customizable:
 
-The CSS classes can be used by JavaScript to select elements. To prevent
-conflict between CSS and JS, **the classes used by JavaScript should not be used
-by CSS, and viceversa**. Because that, there's the `.js-*` namespace:
+```css
+.ly-2columns {
+  --navigation-width: 400px;
 
-```html
-<article class="article js-popup">
-  <h1>Hello world</h1>
-</article>
-
-<div class="js-popup">
-  Other popup
-</div>
-```
-
-```js
-document.querySelector(".js-popup")?.style.display = "block";
-```
-
-It's recomended to separate styling classes and functionality classes. This
-doesn't mean JavaScript can not use styling classes, but only for styling
-purposes:
-
-```js
-document.querySelector(".article")?.classList.add("is-hidden");
+  display: grid;
+  grid-template-areas: "navigation content";
+  grid-template-columns: var(--navigation-width) 1fr;
+}
 ```
 
 ## !important
 
 The `!important` flag **is not recommended,** but may be needed in few edge
-cases. Every time we use it, we should include a comment explaining the reason,
-so it can be removed in the future.
+cases. Every time it's used, include a comment explaining the reason, so it can
+be removed in the future.
 
 ```css
 .popup-title {
   font-weight: bold
-    !important; /* This overrides the inline style applied by the plugin popup */
+    !important; /* This overrides the inline style applied by JavaScript */
 }
 ```
 
@@ -247,41 +303,23 @@ import the nested CSS files in the following order:
 
 - global styles (reset, variables, normalize, etc)
 - components
-- global modifiers
-- hacks
+- global modifiers/utils
+
+You can use `@layer` for better organization:
 
 Example:
 
 ```css
 /* Global styles */
-@import "normalize.css";
-@import "reset.css";
+@import "normalize.css" layer(base);
+@import "reset.css" layer(base);
 
 /* Components */
-@import "components/article.css";
-@import "components/comments.css";
+@import "components/article.css" layer(components);
+@import "components/comments.css" layer(components);
 
-/* Global modifiers and hacks */
-@import "modifiers.css";
-@import "ie.css";
-```
-
-## Layers
-
-Additionally, we can use CSS layers for better organization and priority:
-
-```css
-@layer global {
-  /* Normalize, reset */
-}
-
-@layer components {
-  /* Components */
-}
-
-@layer utils {
-  /* Utils, global modifiers, hacks, etc */
-}
+/* Global modifiers */
+@import "modifiers.css" layer(utils);
 ```
 
 ---
