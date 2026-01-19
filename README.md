@@ -45,11 +45,6 @@ Like component names, properties shouldn't have `-` characters:
 }
 ```
 
-> [!note]
->
-> The use of camelCase notation allows to use a simple join character unlike BEM
-> that needs two underscores (`.article__header__title`).
-
 This allows to add sub-properties if it's needed:
 
 ```css
