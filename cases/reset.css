@@ -13,4 +13,6 @@ html {
   /* https://pawelgrzybek.com/the-css-reset-again/ */
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+
+  font-family: system-ui, sans-serif;
 }
