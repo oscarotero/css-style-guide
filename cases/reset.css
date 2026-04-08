@@ -16,3 +16,8 @@ html {
 
   font-family: system-ui, sans-serif;
 }
+
+body {
+  /* https://www.youtube.com/watch?v=qI5rXLJnxco */
+  min-block-size: 100svh;
+}
