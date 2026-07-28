@@ -93,3 +93,12 @@ Text decoration skip
 ```
 
 [Online demo](https://oscarotero.github.io/css-style-guide/cases/typography/)
+
+## Break word
+
+```css
+.text {
+  word-break: break-word;
+  hyphens: auto;
+}
+```
