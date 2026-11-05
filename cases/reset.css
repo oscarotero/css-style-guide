@@ -19,6 +19,10 @@ html {
   interpolate-size: allow-keywords;
 
   font-family: system-ui, sans-serif;
+
+  /* https://css-tricks.com/taming-typography-modern-css-reset/ */
+  font-synthesis: none;
+  font-size-adjust: from-font;
 }
 
 body {
